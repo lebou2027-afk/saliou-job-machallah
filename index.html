@@ -347,4 +347,10 @@ document.addEventListener('keydown',e=>{if($('#login').classList.contains('off')
 function start(){applyBrand();applyTheme();const u=find('users',SES.g());if(!u){SES.s(null);$('#login').classList.remove('off');$('#pw').value='';dots();$('#usr').innerHTML='';$('#side').innerHTML='';$('#main').innerHTML='';closeM();return}
 $('#login').classList.add('off');$('#usr').innerHTML=`<span style="font-weight:600">${esc(u.nom)}</span> <button onclick="myPin()" title="Changer mon code">🔑</button> <button onclick="logout()" title="Se déconnecter">⏻</button>`;go('dash')}
 start();
-</script></body></html>
+</script></body>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</html>
